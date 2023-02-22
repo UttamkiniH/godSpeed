@@ -12,11 +12,10 @@ jobs:
             sudo npm install -g sonarqube-scanner
       - run:
           name: Run SonarQube Analysis
-          command: sonar-scanner \
+          command: sonar-scanner \                                                 
             -Dsonar.projectKey=godspeed \
             -Dsonar.sources=. \
-            -Dsonar.host.url=https://sonarqube.alpha.blr.gluestack.app/ \
-            -Dsonar.login=sqp_ff33e1c5bc07f305c5d553220e9f9f01eb3bd526
+            -Dsonar.host.url=https://sonarqube.alpha.blr.gluestack.app/
 
 workflows:
   version: 2
