@@ -1,0 +1,25 @@
+version: 2.1
+
+jobs:
+  sonarqube:
+    docker:
+      - image: circleci/node:14.17
+    steps:
+      - checkout
+      - run:
+          name: Install SonarQube Scanner
+          command: npm install -D sonar-scanner
+      - run:
+          name: Run SonarQube Analysis
+          command: sonar-scanner \
+            -Dsonar.projectKey=<your-project-key> \
+            -Dsonar.organization=<your-organization> \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=<your-sonarqube-url> \
+            -Dsonar.login=<your-sonarqube-token>
+
+workflows:
+  version: 2
+  sonarqube:
+    jobs:
+      - sonarqube
