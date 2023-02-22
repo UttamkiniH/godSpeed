@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Run SonarQube Analysis
           command: sonar-scanner \                                                 
-            -Dsonar.projectKey=godspeed \
+            -DprojectKey=godspeed \
             -Dsonar.sources=. \
             -Dsonar.host.url=https://sonarqube.alpha.blr.gluestack.app/
 
