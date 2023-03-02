@@ -7,9 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install SonarQube Scanner
-          command: sudo npm install -g sonarqube-scanner
-      - run:
           name: Run SonarQube Analysis
           command: sonar-scanner \
             -Dsonar.projectKey=godspeed \
